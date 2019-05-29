@@ -63,7 +63,7 @@ def geocode(address):
 	if not results:
 		final['message'] = 'No matching results found'
 	elif results == -1:
-		final['message'] = 'Error utilizing upstream services'
+		final['error'] = 'Error utilizing upstream services'
 	else:
 		final = results[0]
 		if len(results) > 1:

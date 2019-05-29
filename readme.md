@@ -1,4 +1,4 @@
-A simple json-based REST service for geocoding given addresses
+A simple json-based REST service for geocoding given addresses. It utilizes the [HERE service](https://developer.here.com/documentation/geocoder/topics/quick-start-geocode.html) upstream and falls back to [Google Maps](https://developers.google.com/maps/documentation/geocoding/start) if the HERE service either fails or does not return a result.
 
 # Requirements
 
@@ -25,3 +25,41 @@ python cmdline.py <ADDRESS QUERY>
 ```
 eg. python cmdline.py 1600 Pennsylvania Avenue, Washington DC
 
+# Results format
+
+The service returns results in JSON format. The most relevant result is provided in the first level, with its lat and lng coordinates given.
+Also returned is the full address that the given address query was resolved to, it is strongly suggested this is displayed back to the user as confirmation.
+```
+{
+	"lat": 51.5232439,
+	"resolved_address": "221B Baker Street, London, NW1 6, United Kingdom",
+	"lng": -0.1582649
+}
+```
+If multiple address matches are returned, additional addresses will be available in the 'other_results' variable
+```
+{
+	"lat": 38.89768,
+	"resolved_address": "1600 Pennsylvania Ave NW, Washington, DC 20500, United States",
+	"lng": -77.03655,
+	other_results: [
+		{
+			"lat": 38.87912,
+			"resolved_address": "1600 Pennsylvania Ave SE, Washington, DC 20003, United States",
+			"lng": -76.98178
+		}
+	]
+}
+```
+If either no results are returned, an message is returned instead:
+```
+{
+	"message": "No matching results found"
+}
+```
+or if there is an error in both the upstream services (including the fallback), an error message is returned:
+```
+{
+	"error": "Error utilizing upstream services"
+}
+```
