@@ -25,6 +25,13 @@ python cmdline.py <ADDRESS QUERY>
 ```
 eg. python cmdline.py 1600 Pennsylvania Avenue, Washington DC
 
+## Standalone http version
+
+This version doesn't take a dependency on Django, and its used the same way as the Django version is described above, except you run the server with
+```
+python simple.py
+```
+
 # Results format
 
 The service returns results in JSON format. The most relevant result is provided in the first level, with its lat and lng coordinates given.
