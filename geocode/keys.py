@@ -1,0 +1,3 @@
+HERE_APP_ID = "***REMOVED***"
+HERE_APP_CODE = "***REMOVED***"
+GMAPS_API_KEY = "***REMOVED***"

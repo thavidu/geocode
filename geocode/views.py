@@ -7,9 +7,12 @@ from django.http import JsonResponse
 
 # Create your views here.
 
+from api import geocode
+
 #For showing the docs
 class HelpView(generic.TemplateView):
 	template_name = 'geocode/docs.html'
 
 def resolve(request, address):
-	return JsonResponse({"lat": 123, "long": 456})
+	result = geocode(address)
+	return JsonResponse(result)
