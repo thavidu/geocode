@@ -1,7 +1,7 @@
 import json
 import urllib
 import urllib2
-from keys import *
+from geocode.keys import *
 
 def here_query(address):
 	safe_address = urllib.quote(address)
@@ -50,7 +50,6 @@ def gmaps_query(address):
 			results.append(result)
 	except:
 		print "Error parsing GMAPS response, upstream service may have changed."
-		raise
 		return -1
 	return results
 

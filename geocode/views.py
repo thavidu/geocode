@@ -7,7 +7,7 @@ from django.http import JsonResponse
 
 # Create your views here.
 
-from api import geocode
+from geocode.api import geocode
 
 #For showing the docs
 class HelpView(generic.TemplateView):
