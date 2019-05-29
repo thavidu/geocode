@@ -4,7 +4,7 @@ A simple json-based REST service for geocoding given addresses. It utilizes the 
 
 This service targets python2.7, and its only optional dependency is django<2
 
-# How to run
+# Usage
 
 ## Django version
 
@@ -16,7 +16,7 @@ Then go to the given server/port url (default being <127.0.0.1:8000>) and append
 ```
 http://127.0.0.1:8000/geocode/resolve/<ADDRESS QUERY>
 ```
-eg. <http://127.0.0.1:8000/geocode/resolve/San Francisco>
+eg. <http://127.0.0.1:8000/geocode/resolve/San+Francisco>
 
 ## Command line version
 
