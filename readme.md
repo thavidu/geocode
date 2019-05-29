@@ -4,6 +4,10 @@ A simple json-based REST service for geocoding given addresses. It utilizes the 
 
 This service targets python2.7, and its only optional dependency is django<2
 
+Obtain your own API keys for the HERE and GMAPS services from the links below, and then place them inside geocode/keys.py
+* https://developer.here.com/documentation/geocoder/topics/quick-start-geocode.html?create=Freemium-Basic&keepState=true&step=account
+* https://developers.google.com/maps/documentation/geocoding/start#get-a-key
+
 # Usage
 
 ## Django version
